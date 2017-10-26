@@ -1,50 +1,48 @@
 <div class="timeline" >
 <div>
-<h2>タイムライン</h2>
+  <h2>タイムライン</h2>
 </div>
 <div class="contents row" >
-    <% @tweets.each do |tweet| %>
+  <% @tweets.each do |tweet| %>
     <% if tweet.used_time.to_i >= tweet.available_time.to_i %>
-    <div class="card" style= "background-color: #ccffff;>
+      <div class="card" style= "background-color: #ccffff;>
     <% else %>
-    <div class="card" style= "background-color: red;>
+      <div class="card" style= "background-color: red;>
     <% end %>
-    <p>
-    </p>
      <div class="activity_info">
-     <div>
-     <%= image_tag(tweet.user.profile_image, :size =>'50x50') %>
-     </div>
-     <div>
+      <div>
+        <%= image_tag(tweet.user.profile_image, :size =>'50x50') %>
+      </div>
+      <div>
         <h3><span class="name"><%= link_to "#{tweet.user.name}", "/users/#{tweet.user.id}" %></span></a></h3>
-        </div>
-     <div>
+      </div>
+      <div>
         <h4>アクティビティ: <span class="activity"><%= tweet.activity.value %></span></h4>
-     </div>
-     <div class ="activity_time">
+      </div>
+      <div class ="activity_time">
         <h4>予想時間: <span class="available_time"><%= tweet.available_time %>h</span></h4>
-        </div>
+      </div>
         <h4>実働時間: <span class="used_time"><%= tweet.used_time %>h</span></h4>
         <% time = tweet.available_time - tweet.used_time%>
-        <div>
-        <h4>予実の差: <span class="time"><%= time %>h</span>
-        </div></h4>
-      <div class="clearfix"></div>
-        <div>
+      <div>
+        <h4>予実の差: <span class="time"><%= time %>h</span></h4>
+      </div>
+      <div class="clearfix">
+      </div>
+      <div>
         <h4>コメント・ノウハウ: <br><span class="comment"><%= tweet.comment %></span></h4>
         <h5><%= tweet.created_at %></h5>
-        </div>
+      </div>
+    </div>
     <% if user_signed_in? && current_user.id == tweet.user_id %>
-    <li>
-              <%= link_to '編集', "/tweets/#{tweet.id}/edit", method: :get %>
-    </li>
-    <li>
-    <%= link_to '削除', "/tweets/#{tweet.id}", method: :delete %>
-    </li>
-    </div>
+      <li>
+        <%= link_to '編集', "/tweets/#{tweet.id}/edit", method: :get %>
+      </li>
+      <li>
+        <%= link_to '削除', "/tweets/#{tweet.id}", method: :delete %>
+      </li>
     <% end %>
     </div>
-    <% end %>
     <%= paginate(@tweets) %>
 </div>
 </div>
