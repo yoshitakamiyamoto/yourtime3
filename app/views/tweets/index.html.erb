@@ -5,9 +5,9 @@
 <div class="contents row" >
   <% @tweets.each do |tweet| %>
     <% if tweet.used_time.to_i >= tweet.available_time.to_i %>
-      <div class="card" style= "background-color: #ccffff;>
+      <div class="card" style= "background-color: #ccffff";>
     <% else %>
-      <div class="card" style= "background-color: red;>
+      <div class="card" style= "background-color: red";>
     <% end %>
      <div class="activity_info">
       <div>
