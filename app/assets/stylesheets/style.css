@@ -88,11 +88,6 @@ h1 a {
   padding: 12px;
   box-shadow: 0 2px 5px #999;
   border: 0;
-  <% if tweet.used_time.to_i >= tweet.available_time.to_i %>
-    <p style= "background-color: blue;">
-    <% else %>
-    <p style= "background-color: red;">
-
 }
 .title{
   color: blue;
