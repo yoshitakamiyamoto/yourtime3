@@ -1,0 +1,19 @@
+<div class="contents row">
+    <%= form_tag('/tweets', method: :post) do %>
+    <h3>
+      編集する
+    </h3>
+    <div>
+    <input placeholder="予想時間" type="text" name="available_time" value="<%= @tweet.available_time %>" autofocus="true">
+    </div>
+    <div>
+    <input placeholder="実働時間" type="text" name="used_time" value="<%= @tweet.used_time %>" autofocus="true">
+    </div>
+    <div>
+      <textarea cols="30" name="comment" placeholder="text" rows="10"><%= @tweet.comment %></textarea>
+    </div>
+    </div>
+    <div class="clearfix"></div>
+    <input type="submit" value="編集する">
+  <% end %>
+  </div>

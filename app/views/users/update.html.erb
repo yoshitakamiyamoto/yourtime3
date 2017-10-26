@@ -1,0 +1,22 @@
+<div class="edit-row">
+  <%= form_tag("/profile/create/#{@user.id}", method: :post) do %>
+    <h3>
+      プロフィールを編集する
+    </h3>
+
+    <div>
+    <input placeholder="名前" type="string" name="name" value= "<%= @user.name %>">
+    </div>
+    <div>
+    <input placeholder="目標" type="text" name="goal" value= "<%= @user.goal %>">
+    </div>
+    <div>
+    <input placeholder="肩書き・役職" type="text" name="position" value= "<%= @user.position %>">
+    </div>
+    <div>
+    <textarea cols="20" type="text" placeholder="自己紹介" value= "<%= @user.s_introducution %>" name="s_introducution" rows="20"></textarea>
+    </div>
+    <div class="clearfix"></div>
+    <input type="submit" value="プロフィールを編集する">
+  <% end %>
+</div>

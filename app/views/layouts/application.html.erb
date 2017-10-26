@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+  <html>
+    <head>
+      <title>YourTIME</title>
+      <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+      <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+      <%= javascript_include_tag "//www.google.com/jsapi", "chartkick" %>
+      <%= csrf_meta_tags %>
+      <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+    </head>
+    <body>
+
+<header class="header">
+      <h1><a href="/">YourTIME</a></h1>
+
+    <div class="auth_button">
+     <% if user_signed_in? %>
+           <a class= "mypage button" href="/users/<%= current_user.id %>"><%= current_user.name %></a>
+          <%= link_to "ログアウト",destroy_user_session_path,  class: 'logout button',method: :delete %>
+            <a class="post button" href="/tweets/new">投稿</a>
+            <a class="activity button" href="/activity/select">アクティビティ</a>
+     <% else %>
+            <%= link_to "ログイン", new_user_session_path, class: 'login button' %>
+            <%= link_to "新規登録", new_user_registration_path, class: 'resister button' %>
+        <% end %>
+      </div>
+    <div class="clearfix"></div>
+    </header>
+    <div class="header_margin"></div>
+
+
+    <%= yield %>
+
+    <footer>
+      <p>
+        Copyright YourTIME 2017.
+      </p>
+    </footer>
+  </body>
+</html>

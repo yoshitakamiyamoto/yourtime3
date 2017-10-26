@@ -1,0 +1,8 @@
+<div class="activity_select">
+  <h3>アクティビティを選択してください<h3>
+<form method = "post" action = "create">
+  <%=select_tag :activity_id, options_from_collection_for_select(Activity.all, :id, :value) %>
+<input type="submit" value="アクティビティを選択">
+</form>
+</div>
+

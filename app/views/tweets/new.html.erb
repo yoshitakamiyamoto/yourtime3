@@ -1,0 +1,18 @@
+<div class="posts-row">
+  <%= form_tag('/tweets', method: :post) do %>
+    <h3>
+      投稿する
+    </h3>
+    <div>
+    <input placeholder="予想時間" type="text" name="available_time">
+    </div>
+    <div>
+    <input placeholder="実働時間" type="text" name="used_time">
+    </div>
+    <div>
+    <textarea cols="20" name="comment" placeholder="コメント" rows="20"></textarea>
+    </div>
+    <div class="clearfix"></div>
+    <input type="submit" value="投稿する">
+  <% end %>
+</div>

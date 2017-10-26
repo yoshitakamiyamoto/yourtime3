@@ -1,0 +1,143 @@
+#全てのページの共通要素を書いていく
+body {
+  background-color: #f0f0f0;
+  font-size: 10px;
+  color: #333;
+  margin: 0 auto;
+}
+body {
+  -webkit-text-size-adjust: 100%;
+}
+h1,h2,h3,h4,h5,h6,p {
+  padding: 10px 0;
+  margin: 0;
+}
+
+html {
+  margin: 0px;
+  height: 100%;
+}
+body {
+  margin: 0px;
+  background-color: #f9f9f9;
+  min-height: 100%;
+  height: auto !important;
+  height: 100%;
+  position: relative;
+}
+header {
+  background-color: #3F51B5;
+  margin: 0px;
+  height: 100px;
+  position: fixed;
+  height: 64px;
+  width: 100%;
+  top :0px;
+  box-shadow: 0 2px 5px #999;
+  border: 0;
+}
+.header_margin {
+  height: 64px;
+}
+footer {
+  position: relative;
+  margin-top: 10px;
+  bottom: 0; left: 0; right: 0;
+}
+footer p {
+  margin :5px;
+}
+h1 {
+  color: white;
+  margin: 6px 0px 0px 0px;
+  padding: 9px;
+  width: 30%;
+  float: left;
+  font-size: 20px;
+}
+h1 a {
+  text-decoration: none;
+  color:#FFFFFF;
+}
+.auth_button {
+  float: right;
+  margin-top: 15px;
+}
+.button {
+  text-decoration: none;
+  font-weight: bold;
+  color:#FFFFFF;
+  background-color: #3F51B5;
+  padding: 8px;
+  margin: 4px;
+  top: 3px;
+  border-radius: 20px;
+  border: solid;
+  border-color: #FFFFFF;
+  border-width: 2px;
+  font-size:5px;
+}
+.clearfix:after {
+  content:" ";
+  display:block;
+  clear:both;
+}
+.card {
+  font-family: arial, sans-serif;
+  margin: 12px;
+  padding: 12px;
+  box-shadow: 0 2px 5px #999;
+  border: 0;
+  <% if tweet.used_time.to_i >= tweet.available_time.to_i %>
+    <p style= "background-color: blue;">
+    <% else %>
+    <p style= "background-color: red;">
+
+}
+.title{
+  color: blue;
+  margin: 0 auto;
+}
+.card img {
+  border-radius: 50%;  /* 角丸半径を50%にする(=円形にする) */
+  max-width: 56px;
+  height: auto;
+  float: left;
+  margin: 0px 6px 6px 0px;
+}
+.profile {
+  max-width: auto;
+  height: auto;
+  margin: 10px 10px 10px 10px;
+  padding: 15px;
+  border: 0;
+  background-color:white;
+  box-shadow: 0 2px 5px #999;
+}
+
+.timeline {
+ margin:0 auto;
+ height: auto;
+}
+
+.mgn10 {
+    margin-bottom: 10px !important;
+}
+
+.profile_img {
+  margin:0 auto;
+}
+}
+.contents-row {
+  background-color: #FFFFFF;
+  margin:0 auto;
+}
+
+.posts-row {
+ margin:0 auto;
+ background-color: gray;
+ height: 50px;
+ width: 200px;
+}
+
+
