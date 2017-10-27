@@ -3,10 +3,10 @@ class GoogleCalendar
     require 'signet/oauth_2/client'
     require 'google/apis/calendar_v3'
     client = Signet::OAuth2::Client.new(
-      client_id: '511426510241-c11qah9mqi12h384ljfeccbhac75jfo6.apps.googleusercontent.com',
-      client_secret: 'T6RqqyMXDs43kHoYsLQS95PQ',
-      access_token: 'ya29.GlvwBFckQm1jms-mIaCY5G9_48SC6dv4s8t3x1pAx_Kh4YHu6WhweDlxqUfy3z0WpoASxoDOwtzquZ2d81Rh6ymmgshVh2XLpn4JBpxRSS2_CZ-VRHnH3zCtkFGp',
-      refresh_token: '1/pJX6j_fdJ5o-tqoCwwi-Xv2jHTeFlljfXvC_d8zrZKM',
+      client_id: ENV["CLIENT_ID"],
+      client_secret: ENV["CLIENT_SECRET"],
+      access_token: ENV["ACCESS_TOKEN"],
+      refresh_token: ENV["REFRESH_TOKEN"],
       token_credential_uri: 'https://accounts.google.com/o/oauth2/token'
     )
     client.refresh!

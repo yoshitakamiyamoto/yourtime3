@@ -17,8 +17,8 @@
   <h3><span class="position"><%= @user.position %></span></h3>
   </div>
   <div>
-  自己紹介<br>
-  <span class="position"><%= @user.s_introducution %></span><br>
+  自己紹介
+  <h3><span class="position"><%= @user.s_introducution %></span><h3>
   </div>
   <div>
    <a class="edit button" href="/profile/update/<%= @user.id %>">プロフィールを編集する</a>
@@ -52,8 +52,8 @@
   <% end %>
  </div>
 <%= paginate(@tweets) %>
- <div class="other_users row">
- <h3>同じアクティビティを持つユーザー</h3>
+<h3>同じアクティビティを持つユーザー</h3>
+ <div class="other_users_row">
  <% @other_users.each do |other_user| %>
  <% if other_user!= current_user %>
  <div class = "card img">

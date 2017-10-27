@@ -7,7 +7,7 @@
     <% if tweet.used_time.to_i >= tweet.available_time.to_i %>
       <div class="card" style= "background-color: #ccffff";>
     <% else %>
-      <div class="card" style= "background-color: red";>
+      <div class="card" style= "background-color: yellow";>
     <% end %>
      <div class="activity_info">
       <div>
@@ -23,7 +23,7 @@
         <h4>予想時間: <span class="available_time"><%= tweet.available_time %>h</span></h4>
       </div>
         <h4>実働時間: <span class="used_time"><%= tweet.used_time %>h</span></h4>
-        <% time = tweet.available_time - tweet.used_time%>
+        <% time = tweet.used_time - tweet.available_time %>
       <div>
         <h4>予実の差: <span class="time"><%= time %>h</span></h4>
       </div>
@@ -34,14 +34,20 @@
         <h5><%= tweet.created_at %></h5>
       </div>
     </div>
+    <div class="card-image clearfix">
     <% if user_signed_in? && current_user.id == tweet.user_id %>
-      <li>
-        <%= link_to '編集', "/tweets/#{tweet.id}/edit", method: :get %>
-      </li>
-      <li>
-        <%= link_to '削除', "/tweets/#{tweet.id}", method: :delete %>
-      </li>
+      <%= link_to "/tweets/#{tweet.id}/edit" do %>
+      <div class="editbox">
+      <%= image_tag '/assets/edit.jpg' %>
     <% end %>
+    </div>
+    <div class= "dustbox">
+    <%= link_to "/tweets/#{tweet.id}", method: :delete do %>
+      <%= image_tag '/assets/dustbox.jpg'%>
+    <% end %>
+    </div>
+    <% end %>
+    </div>
     </div>
     <% end %>
     <%= paginate(@tweets) %>
