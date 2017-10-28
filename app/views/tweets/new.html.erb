@@ -1,4 +1,4 @@
-<div class="posts-row">
+<div class="yourtime_form">
   <%= form_tag('/tweets', method: :post) do %>
     <h3>
       投稿する
@@ -13,6 +13,8 @@
     <textarea cols="20" name="comment" placeholder="コメント" rows="20"></textarea>
     </div>
     <div class="clearfix"></div>
+    <div class="submit_button">
     <input type="submit" value="投稿する">
+    </div>
   <% end %>
 </div>

@@ -1,30 +1,32 @@
 <div class=mypage>
  <div class="profile">
   <div class="profile_img">
-  <%= image_tag(@user.profile_image, :size =>'100x100') %>
+  <%= image_tag(@user.profile_image) %>
   </div>
-  <div>
-  ユーザーネーム<h3><span class="name"><%= @user.name %></span></h3>
+  <div class= mypage_font>
+  ユーザーネーム
   </div>
-  アクティビティ<h3><span class="activity"><%= @user.activity.value %></span></h3>
-  <div>
-  <div>
+  <h4><span class="name"><%= @user.name %><hr></span></hr></h4>
+  <div class= mypage_font>
+  アクティビティ
+  </div>
+  <h4><span class="activity"><%= @user.activity.value %><hr></span></hr></h4>
+  <div class= mypage_font>
   目標
-  <h3><span class="goal"><%= @user.goal %></span></h3>
   </div>
-  <div>
+  <h4><span class="goal"><%= @user.goal %><hr></span></hr></h4>
+  <div class= mypage_font>
   役職・肩書き
-  <h3><span class="position"><%= @user.position %></span></h3>
   </div>
-  <div>
+  <h4><span class="position"><%= @user.position %><hr></span></hr></h4>
+  <div class= mypage_font>
   自己紹介
-  <h3><span class="position"><%= @user.s_introducution %></span><h3>
   </div>
-  <div>
-   <a class="edit button" href="/profile/update/<%= @user.id %>">プロフィールを編集する</a>
-   </div>
-   </div>
+  <h4><span class="position"><%= @user.s_introducution %><hr></span></hr></h4>
+  <div class="profile_edit">
+   <a class= "submit" href="/profile/update/<%= @user.id %>">プロフィールを編集する</a>
   </div>
+ </div>
   <div>
   <%= high_chart("my_chart", @chart) %>
   </div>
@@ -32,19 +34,19 @@
   <%= high_chart("my_chart2", @chart2) %>
   </div>
  <div class="contents row">
-  <h2 class= "mgn10" <%= @user.name %>さんの投稿一覧</h2>
+  <h2 class= "mgn10" <%= @user.name %>さんの投稿一覧 %></h2>
   <% @tweets.each do |tweet| %>
   <div class="card">
   <div>
   <%= image_tag(tweet.user.profile_image, :size =>'50x50') %>
   </div>
-  <h3><%= tweet.user.name %></h3>
-  <h4>アクティビティ: <%= tweet.user.activity.value %><br></h4>
-  <h4>予想時間: <%= tweet.available_time %>h<br></h4>
-  <h4>実働時間: <%= tweet.used_time %>h<br></h4>
+  <h3><%= tweet.user.name %></h3><br>
+  アクティビティ: <%= tweet.user.activity.value %><hr>
+  予想時間: <%= tweet.available_time %>h<hr>
+  実働時間: <%= tweet.used_time %>h<hr>
   <% time = tweet.available_time - tweet.used_time%>
-  <h4>予実の差: <%= time %>h<br></h4>
-  <h4>コメント: <%= tweet.comment %><br></h4>
+  予実の差: <%= time %>h<hr>
+  コメント: <%= tweet.comment %><hr>
   <h5><%= tweet.created_at %></h5>
   <%= link_to '編集', "/tweets/#{tweet.id}/edit", method: :get %>
   <%= link_to '削除', "/tweets/#{tweet.id}", method: :delete %>

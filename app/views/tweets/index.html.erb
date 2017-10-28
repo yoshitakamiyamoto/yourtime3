@@ -1,7 +1,5 @@
 <div class="timeline" >
-<div>
-  <h2>タイムライン</h2>
-</div>
+
 <div class="contents row" >
   <% @tweets.each do |tweet| %>
     <% if tweet.used_time.to_i >= tweet.available_time.to_i %>
@@ -16,24 +14,20 @@
       <div>
         <h3><span class="name"><%= link_to "#{tweet.user.name}", "/users/#{tweet.user.id}" %></span></a></h3>
       </div>
-      <div>
-        <h4>アクティビティ: <span class="activity"><%= tweet.activity.value %></span></h4>
-      </div>
-      <div class ="activity_time">
-        <h4>予想時間: <span class="available_time"><%= tweet.available_time %>h</span></h4>
-      </div>
-        <h4>実働時間: <span class="used_time"><%= tweet.used_time %>h</span></h4>
+      <div class="clearfix"></div>
+      <div class= mypage_font>
+        <h4>アクティビティ</div> <span class="activity"><%= tweet.activity.value %></span></h4>
+      <div class= mypage_font>
+        <h4>予想時間</div><span class="available_time"><%= tweet.available_time %>h</span></h4>
+      <div class= mypage_font>
+        <h4>実働時間</div> <span class="used_time"><%= tweet.used_time %>h</span></h4>
         <% time = tweet.used_time - tweet.available_time %>
-      <div>
-        <h4>予実の差: <span class="time"><%= time %>h</span></h4>
+      <div class= mypage_font>
+        <h4>予実の差</div> <span class="time"><%= time %>h</span></h4>
+      <div class= mypage_font>
+        <h4>コメント・ノウハウ</div><span class="comment"><%= tweet.comment %></span></h4>
+      <h4><%= tweet.created_at %></h4>
       </div>
-      <div class="clearfix">
-      </div>
-      <div>
-        <h4>コメント・ノウハウ: <br><span class="comment"><%= tweet.comment %></span></h4>
-        <h5><%= tweet.created_at %></h5>
-      </div>
-    </div>
     <div class="card-image clearfix">
     <% if user_signed_in? && current_user.id == tweet.user_id %>
       <%= link_to "/tweets/#{tweet.id}/edit" do %>
@@ -45,6 +39,7 @@
     <%= link_to "/tweets/#{tweet.id}", method: :delete do %>
       <%= image_tag '/assets/dustbox.jpg'%>
     <% end %>
+    </div>
     </div>
     <% end %>
     </div>

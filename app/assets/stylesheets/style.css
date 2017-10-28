@@ -1,9 +1,14 @@
 #全てのページの共通要素を書いていく
+@import url(https://fonts.googleapis.com/css?family=Lato:400,700);
+@import url(http://fonts.googleapis.com/earlyaccess/notosansjp.css);
+
 body {
   background-color: #f0f0f0;
   font-size: 10px;
   color: #333;
   margin: 0 auto;
+  font-family: Lato, "Noto Sans JP", "游ゴシック Medium", "游ゴシック体", "Yu Gothic Medium", YuGothic, "ヒラギノ角ゴ ProN", "Hiragino Kaku Gothic ProN", "メイリオ", Meiryo, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;
+
 }
 body {
   -webkit-text-size-adjust: 100%;
@@ -46,6 +51,7 @@ footer {
   content:" ";
   display:block;
   clear:both;
+
 }
 footer p {
   margin :5px;
@@ -87,7 +93,6 @@ h1 a {
 }
 
 .card {
-  font-family: arial, sans-serif;
   margin: 12px;
   padding: 12px;
   box-shadow: 0 2px 5px #999;
@@ -122,7 +127,23 @@ h1 a {
   background-color:white;
   box-shadow: 0 2px 5px #999;
 }
+.timeline .timeline_moji{
+  text-align: center
 
+}
+.mypage_font{
+  color: gray;
+  font-size: 11px;
+}
+
+.mypage_font h4{
+  padding: 3px 0 0 0;
+}
+
+.mypage h4{
+  margin: 0px;
+  padding: 0px;
+}
 .timeline {
  margin:0 auto;
  height: auto;
@@ -134,12 +155,13 @@ h1 a {
   float: left;
 }
 
-.mgn10 {
-    margin-bottom: 10px !important;
+.profile_img img {
+ border-radius: 50px;  /* 角丸半径を50%にする(=円形にする) */
+  max-width: 100px;
+  height: auto;
 }
-
-.profile_img {
-  margin:0 auto;
+.profile_img{
+  text-align: center;
 }
 
 .contents-row {
@@ -147,11 +169,96 @@ h1 a {
   margin:0 auto;
 }
 
-.posts-row {
- margin: 0 auto;
- background-color: #999;
- height: 50px;
- width: 200px;
+.yourtime_form {
+ background-color: #FFFFFF;
+ width: 85%;
+ margin: 20px auto 0px;
+ box-shadow: 0 2px 5px #999;
+ text-align: center;
+}
+
+.yourtime_form input{
+ border: 2px solid #ccc;
+ border-radius: 7px;
+ padding: 6px;
+ margin: 3px auto;
+
+}
+
+.yourtime_form h3{
+  font-weight: 100 !important;
+  color: #999;
+}
+.submit_button input{
+ background-color: #FF9800;
+ color: #FFFFFF;
+ padding: 10px 15px;
+ margin: 0px 0px 9px 0px;
+}
+
+.success {
+ text-align: center;
+}
+
+.success .submit_button {
+ background-color: #FF9800;
+ color: #FFFFFF;
+ padding: 10px 15px;
+ margin: 0px 0px 9px 0px;
+}
+
+.profile_edit .submit {
+ background-color: #FF9800;
+ color: #FFFFFF;
+ padding: 10px 15px;
+ margin: 0px 0px 9px 0px;
+}
+
+.field input{
+ border: 2px solid #ccc;
+ border-radius: 7px;
+ padding: 6px;
+ margin: 10px auto;
+ width: 300px;
+}
+
+.yourtime_form select{
+width: 200px;
+height: 40px;
+margin: 0 0 10px 0;
+background-color: #FFF
+}
+
+.actions input{
+  background-color: #FF9800;
+  color: #FFFFFF;
+  padding: 10px 15px;
+  margin: 0px 0px 9px 0px;
+}
+
+.yourtime_form textarea{
+border: 2px solid #ccc;
+border-radius: 7px;
+resize: none;
+margin: 3px auto;
+padding: 6px;
+width: 270px;
+}
+
+html, body {
+  height: 100% !important;
+  margin: 0 !important;
+}
+.wrapper {
+  min-height: 100% !important;
+
+  /* フッタの高さと等しいネガティブマージン */
+  /* また最後の子要素の潜在的なマージンとしても機能 */
+  margin-bottom: x -50px !important;
+}
+.footer,
+.push {
+  height: 50px !important;
 }
 
 

@@ -1,8 +1,11 @@
+<div class="yourtime_form">
 <div class="edit-row">
   <%= form_tag("/profile/create/#{@user.id}", method: :post) do %>
     <h3>
-      プロフィールを編集する
+      プロフィールを編集
     </h3>
+
+
 
     <div>
     <input placeholder="名前" type="string" name="name" value= "<%= @user.name %>">
@@ -17,6 +20,8 @@
     <textarea cols="20" type="text" placeholder="自己紹介" value= "<%= @user.s_introducution %>" name="s_introducution" rows="20"></textarea>
     </div>
     <div class="clearfix"></div>
+    <div class="submit_button">
     <input type="submit" value="プロフィールを編集する">
   <% end %>
+</div>
 </div>

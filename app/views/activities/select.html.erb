@@ -1,8 +1,12 @@
-<div class="activity_select">
+<div class="yourtime_form">
   <h3>アクティビティを選択してください<h3>
 <form method = "post" action = "create">
   <%=select_tag :activity_id, options_from_collection_for_select(Activity.all, :id, :value) %>
+<div class= "form_wrapper">
+<div class= "submit_button">
 <input type="submit" value="アクティビティを選択">
+</div>
+</div>
 </form>
 </div>
 
